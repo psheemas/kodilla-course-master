@@ -11,7 +11,7 @@ import java.util.Random;
 
 @Service
 public class ShopService {
-    private final List<Order> orders = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
     @Autowired
     private Authenticator authenticator;
     @Autowired

@@ -12,5 +12,4 @@ public final class OrderDto {
     public List<ItemDto> getItems(){
         return items;
     }
-
 }

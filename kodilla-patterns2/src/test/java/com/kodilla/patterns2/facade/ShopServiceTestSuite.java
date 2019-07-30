@@ -6,6 +6,8 @@ import com.kodilla.patterns2.facade.api.OrderFacade;
 import com.kodilla.patterns2.facade.api.OrderProcessingException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -20,9 +22,11 @@ public class ShopServiceTestSuite {
 
     @Autowired
     OrderFacade orderFacade;
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShopServiceTestSuite.class);
 
     @Test
     public void testShopServiceSubmitOrder() {
+        LOGGER.info("Testing factorial method");
         long orderId = shopService.openOrder(1L);
         System.out.println("Registering new order, ID: " + orderId);
         if (orderId > 0) {
@@ -68,10 +72,12 @@ public class ShopServiceTestSuite {
     @Test
     public void testShopFacade(){
         OrderDto order = new OrderDto();
+        LOGGER.info("Testing factorial method");
         order.addItem(new ItemDto(10L,2));
         order.addItem(new ItemDto(216L,1));
         order.addItem(new ItemDto(25L,1));
         order.addItem(new ItemDto(11L,3));
+
         try{
             orderFacade.processOrder(order, 1L);
         }catch (OrderProcessingException e){
