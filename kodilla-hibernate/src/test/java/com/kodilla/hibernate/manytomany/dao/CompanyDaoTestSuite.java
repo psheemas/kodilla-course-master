@@ -78,7 +78,7 @@ public class CompanyDaoTestSuite {
         //CleanUp
 
     }
-
+/*
     @Test
     public void testFindByFirstThreeLetters() {
         //Given
@@ -92,5 +92,7 @@ public class CompanyDaoTestSuite {
         //CleanUp
 
     }
+
+ */
 
 }
